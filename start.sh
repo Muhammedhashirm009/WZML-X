@@ -1,10 +1,13 @@
 #!/bin/bash
 
-# Run the bot first (update.py then bot) in the background
-python3 app.py
+# Start the Flask server (Gunicorn + main.py) in the foreground
+gunicorn app:app & python3 main.py &
 
+# Wait for 10 minutes (600 seconds)
 sleep 600
 
-# Start the Flask server
+# Start the bot
+python3 update.py && python3 -m bot
 
-python3 update.py && python3 -m bot &
+# Keep the container running
+wait
