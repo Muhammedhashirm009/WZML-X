@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start Flask in the background
-python3 app.py & 
+python3 update.py && python3 -m bot &
 
 # Run bot update and start bot
-python3 update.py && python3 -m bot
+python3 app.py
