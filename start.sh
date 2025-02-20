@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start the Flask server (Gunicorn + main.py) in the foreground
-gunicorn app:app & python3 main.py &
+gunicorn app:app & python3 app.py &
 
 # Wait for 10 minutes (600 seconds)
 sleep 600
