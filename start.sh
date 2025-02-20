@@ -4,7 +4,7 @@
 gunicorn app:app & python3 app.py &
 
 # Wait for 10 minutes (600 seconds)
-sleep 600
+sleep 300
 
 # Start the bot
 python3 update.py && python3 -m bot
